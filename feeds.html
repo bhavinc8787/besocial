@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feeds</title>
+  <link rel="stylesheet" href="feeds.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1 style="font-size: 520%;">&#120069eSocial</h1>
+    <nav>
+      <ul>
+        <li><a href="besocial.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <!-- Add more navigation links as needed -->
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    
+    <div class="sidebar friends">
+      <h2> >>></h2>
+      <!-- Friends content goes here -->
+      <div class="option-card" onclick="togglePostBox()">
+        <img src="img/add.png" alt="Add New Post Icon">
+        <p>Add New Post</p>
+      </div>
+      <div id="new-post-box" class="new-post-box" style="display: none;">
+        <input type="text" id="post-description" class="post-input" placeholder="Add description">
+        <input type="file" id="post-image" class="post-file">
+        <button class="post-btn" onclick="addNewPost()">Post</button>
+      </div>
+      <div class="option-card">
+        <img src="img/friends.png" alt="Friends Icon">
+        <p>Friends</p>
+      </div>
+      <div class="option-card">
+        <img src="img/browser.png" alt="Pages Icon">
+        <p>Pages</p>
+      </div>
+      <div class="option-card">
+        <img src="img/private.png" alt="Security Icon">
+        <p>Security</p>
+      </div>
+      <div class="option-card">
+        <img src="img/arrow.png" alt="Log Out Icon">
+        <p>Log Out</p>
+      </div>
+      <div class="option-card">
+        <img src="img/padlock.png" alt="Privacy Policy Icon">
+        <p>Privacy Policy</p>
+      </div>
+      
+    </div>
+    <div class="feeds">
+      <h2 style="margin-bottom: 5%;">Feeds</h2>
+      <div class="stories">
+        <div class="story" onclick="startLoading()">
+          <img src="https://via.placeholder.com/150" alt="Image">
+        </div>
+        <div class="story" onclick="showStory(this)" data-image="img\3.jpeg">
+          <img src="img\3.jpeg" alt="Story 1">
+        </div>
+        <div class="story" onclick="showStory(this)" data-image="img\3.jpeg">
+          <img src="img\3.jpeg" alt="Story 1">
+        </div>
+        <div class="story" onclick="showStory(this)" data-image="img\3.jpeg">
+          <img src="img\3.jpeg" alt="Story 1">
+        </div>
+        <div class="story" onclick="showStory(this)" data-image="img\3.jpeg">
+          <img src="img\3.jpeg" alt="Story 1">
+        </div>
+        <div class="story" onclick="showStory(this)" data-image="img\3.jpeg">
+          <img src="img\3.jpeg" alt="Story 1">
+        </div>
+        <div class="story" onclick="showStory(this)" data-image="img\3.jpeg">
+          <img src="img\3.jpeg" alt="Story 1">
+        </div>
+        <div class="story" onclick="showStory(this)" data-image="img\3.jpeg">
+          <img src="img\3.jpeg" alt="Story 1">
+        </div>
+        <div class="story" onclick="showStory(this)" data-image="img\3.jpeg">
+          <img src="img\3.jpeg" alt="Story 1">
+        </div>
+      </div>
+      <div class="feed-card">
+        <div class="post-header">
+          <img src="img\3.jpeg" class="profile-pic" alt="Profile Picture">
+          <div class="post-info">
+            <p class="name">Yash Deokate</p>
+            <p class="description">Bachpan ka Pyar Bhool nhii jana rere.... <br> #love #breakup</p>
+          </div>
+        </div>
+        <img src="img\3.jpeg" class="post-image" alt="Post Image">
+        <div class="post-icons">
+          <img src="img\heart.png" class="icon" alt="View Icon" onclick="viewImage('img/heart.png')">
+          <img src="img\comments.png" class="icon" alt="Comment Icon" onclick="showCommentBox(this)">
+          <img src="img\send.png" class="icon inactive" alt="Like Icon">
+        </div>
+        <div class="comment-section" style="display:none;">
+          <input type="text" class="comment-input" placeholder="Write a comment...">
+          <button class="comment-btn" onclick="postComment(this)">Comment</button>
+        </div>
+      </div>
+      <div class="feed-card">
+        <div class="post-header">
+          <img src="img\6.jpeg" class="profile-pic" alt="Profile Picture">
+          <div class="post-info">
+            <p class="name">Shubham Pound</p>
+            <p class="description">Habibiii... Come to dubai</p>
+          </div>
+        </div>
+        <img src="img\7.jpeg" class="post-image" alt="Post Image">
+        <div class="post-icons">
+          <img src="img\heart.png" class="icon" alt="View Icon" onclick="viewImage('img/heart.png')">
+          <img src="img\comments.png" class="icon" alt="Comment Icon" onclick="showCommentBox(this)">
+          <img src="img\send.png" class="icon inactive" alt="Like Icon">
+        </div>
+        <div class="comment-section" style="display:none;">
+          <input type="text" class="comment-input" placeholder="Write a comment...">
+          <button class="comment-btn" onclick="postComment(this)">Comment</button>
+        </div>
+      </div>
+      
+      <div class="feed-card">
+        <div class="post-header">
+          <img src="img/4.jpeg" class="profile-pic" alt="Profile Picture">
+          <div class="post-info">
+            <p class="name">Rajat</p>
+            <p class="description">Lungi Dance....</p>
+          </div>
+        </div>
+        <img src="img/4.jpeg" class="post-image" alt="Post Image">
+        <div class="post-icons">
+          <img src="img\heart.png" class="icon" alt="View Icon" onclick="viewImage('img/heart.png')">
+          <img src="img\comments.png" class="icon" alt="Comment Icon" onclick="showCommentBox(this)">
+          <img src="img\send.png" class="icon inactive" alt="Like Icon">
+        </div>
+        <div class="comment-section" style="display:none;">
+          <input type="text" class="comment-input" placeholder="Write a comment...">
+          <button class="comment-btn" onclick="postComment(this)">Comment</button>
+        </div>
+      </div>
+      
+      <div class="feed-card">
+        <div class="post-header">
+          <img src="img\8.jpeg" class="profile-pic" alt="Profile Picture">
+          <div class="post-info">
+            <p class="name">Soham Bakre</p>
+            <p class="description">This is a description of the post.</p>
+          </div>
+        </div>
+        <img src="img\8.jpeg" class="post-image" alt="Post Image">
+        <div class="post-icons">
+          <img src="img\heart.png" class="icon" alt="View Icon" onclick="viewImage('img/heart.png')">
+          <img src="img\comments.png" class="icon" alt="Comment Icon" onclick="showCommentBox(this)">
+          <img src="img\send.png" class="icon inactive" alt="Like Icon">
+        </div>
+        <div class="comment-section" style="display:none;">
+          <input type="text" class="comment-input" placeholder="Write a comment...">
+          <button class="comment-btn" onclick="postComment(this)">Comment</button>
+        </div>
+      </div>
+      
+      <div class="feed-card">
+        <div class="post-header">
+          <img src="img\5.jpeg" class="profile-pic" alt="Profile Picture">
+          <div class="post-info">
+            <p class="name">Sahil Pohekar</p>
+            <p class="description">This is a description of the post.</p>
+          </div>
+        </div>
+        <img src="img\5.jpeg" class="post-image" alt="Post Image">
+        <div class="post-icons">
+          <img src="img\heart.png" class="icon" alt="View Icon" onclick="viewImage('img/heart.png')">
+          <img src="img\comments.png" class="icon" alt="Comment Icon" onclick="showCommentBox(this)">
+          <img src="img\send.png" class="icon inactive" alt="Like Icon">
+        </div>
+        <div class="comment-section" style="display:none;">
+          <input type="text" class="comment-input" placeholder="Write a comment...">
+          <button class="comment-btn" onclick="postComment(this)">Comment</button>
+        </div>
+      </div>
+      
+      <div class="feed-card">
+        <div class="post-header">
+          <img src="img\6.jpeg" class="profile-pic" alt="Profile Picture">
+          <div class="post-info">
+            <p class="name">Shubham Pound</p>
+            <p class="description">This is a description of the post.</p>
+          </div>
+        </div>
+        <img src="img\6.jpeg" class="post-image" alt="Post Image">
+        <div class="post-icons">
+          <img src="img\heart.png" class="icon" alt="View Icon" onclick="viewImage('img/heart.png')">
+          <img src="img\comments.png" class="icon" alt="Comment Icon" onclick="showCommentBox(this)">
+          <img src="img\send.png" class="icon inactive" alt="Like Icon">
+        </div>
+        <div class="comment-section" style="display:none;">
+          <input type="text" class="comment-input" placeholder="Write a comment...">
+          <button class="comment-btn" onclick="postComment(this)">Comment</button>
+        </div>
+      </div>
+    </div>
+     <div class="sidebar chat">
+      <h2>Chat</h2>
+      <!-- Chat content -->
+      <div class="chat-rows">
+        <div class="chat-row">
+         <img src="img\3.jpeg" class="profile-pic" alt="Profile Picture">
+          <div class="chat-info">
+            <p class="name">Yash Deokate <span class="status online"></span></p>
+            <input type="text" placeholder="Type your message" class="chat-input">
+            <button class="send-btn" onclick="sendMessage(this)">Send</button>
+          </div>
+        </div>
+       
+        <div class="chat-row">
+          <img src="img\1.jpeg" class="profile-pic" alt="Profile Picture">
+          <div class="chat-info">
+            <p class="name">Soham Bakre <span class="status offline"></span></p>
+            <input type="text" placeholder="Type your message" class="chat-input">
+            <button class="send-btn" onclick="sendMessage(this)">Send</button>
+          </div>
+        </div>
+        <div class="chat-row">
+            <img src="img\5.jpeg" class="profile-pic" alt="Profile Picture">
+            <div class="chat-info">
+              <p class="name">Sahil Pohekar <span class="status offline"></span></p>
+              <input type="text" placeholder="Type your message" class="chat-input">
+              <button class="send-btn" onclick="sendMessage(this)">Send</button>
+            </div>
+          </div>
+          <div class="chat-row">
+            <img src="img\1.jpeg" class="profile-pic" alt="Profile Picture">
+            <div class="chat-info">
+              <p class="name">Nishant Pate<span class="status offline"></span></p>
+              <input type="text" placeholder="Type your message" class="chat-input">
+              <button class="send-btn" onclick="sendMessage(this)">Send</button>
+            </div>
+          </div>
+          <div class="chat-row">
+           <img src="img\6.jpeg" class="profile-pic" alt="Profile Picture">
+            <div class="chat-info">
+              <p class="name">shubahm paund<span class="status online"></span></p>
+              <input type="text" placeholder="Type your message" class="chat-input">
+              <button class="send-btn" onclick="sendMessage(this)">Send</button>
+            </div>
+          </div>
+          <div class="chat-row">
+            <img src="img\1.jpeg" class="profile-pic" alt="Profile Picture">
+            <div class="chat-info">
+              <p class="name">Rajat <span class="status online"></span></p>
+              <input type="text" placeholder="Type your message" class="chat-input">
+              <button class="send-btn" onclick="sendMessage(this)">Send</button>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="contact-info">
+      <div class="info-item">
+        <img src="img/gmail.png" alt="Email Logo">
+        <p>contact@besocial.com</p>
+      </div>
+      <div class="info-item">
+        <img src="img/telephone.png" alt="Phone Logo">
+        <p>+919075688958</p>
+      </div>
+      <div class="info-item">
+        <img src="img/location.png" alt="Address Logo">
+        <p>Fsg, Pune</p>
+      </div>
+    </div>
+    <p>&copy; 2024 &#120069eSocial. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function sendMessage(button) {
+      const chatInput = button.previousElementSibling;
+      const message = chatInput.value;
+      if (message.trim() !== "") {
+        alert('Message sent successfully');
+        chatInput.value = '';
+      }
+    }
+
+    function viewImage(src) {
+      const tempImage = document.createElement('img');
+      tempImage.src = src;
+      tempImage.style.position = 'fixed';
+      tempImage.style.top = '50%';
+      tempImage.style.left = '50%';
+      tempImage.style.transform = 'translate(-50%, -50%)';
+      tempImage.style.zIndex = '1000';
+      tempImage.style.width = '300px';
+      tempImage.style.height = '300px';
+      document.body.appendChild(tempImage);
+
+      setTimeout(() => {
+        document.body.removeChild(tempImage);
+      }, 500);
+    }
+
+    function showCommentBox(icon) {
+      const commentSection = icon.closest('.feed-card').querySelector('.comment-section');
+      commentSection.style.display = commentSection.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function postComment(button) {
+      const commentInput = button.previousElementSibling;
+      const comment = commentInput.value;
+      if (comment.trim() !== "") {
+        alert('Comment posted successfully');
+        commentInput.value = '';
+      }
+    }
+
+    function togglePostBox() {
+      const postBox = document.getElementById('new-post-box');
+      postBox.style.display = postBox.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function addNewPost() {
+      const description = document.getElementById('post-description').value;
+      const image = document.getElementById('post-image').files[0];
+
+      if (description.trim() === '') {
+        alert('Please add a description.');
+        return;
+      }
+
+      if (!image) {
+        alert('Please select an image.');
+        return;
+      }
+
+      // Create a new feed card with the new post details
+      const feedsContainer = document.querySelector('.feeds');
+      const newFeedCard = document.createElement('div');
+      newFeedCard.classList.add('feed-card');
+
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        newFeedCard.innerHTML = `
+          <div class="post-header">
+            <img src="img/default_profile.png" class="profile-pic" alt="Profile Picture">
+            <div class="post-info">
+              <p class="name">New User</p>
+              <p class="description">${description}</p>
+            </div>
+          </div>
+          <img src="${e.target.result}" class="post-image" alt="Post Image">
+          <div class="post-icons">
+            <img src="img/heart.png" class="icon" alt="View Icon" onclick="viewImage('img/heart.png')">
+            <img src="img/comments.png" class="icon" alt="Comment Icon" onclick="showCommentBox(this)">
+            <img src="img/send.png" class="icon inactive" alt="Like Icon">
+          </div>
+          <div class="comment-section" style="display:none;">
+            <input type="text" class="comment-input" placeholder="Write a comment...">
+            <button class="comment-btn" onclick="postComment(this)">Comment</button>
+          </div>
+        `;
+
+        feedsContainer.prepend(newFeedCard);
+      }
+
+      reader.readAsDataURL(image);
+
+      // Reset the input fields and hide the post box
+      document.getElementById('post-description').value = '';
+      document.getElementById('post-image').value = '';
+      document.getElementById('new-post-box').style.display = 'none';
+
+      alert('Post added successfully');
+
+    }
+    function showStory(element) {
+      const imageSrc = element.getAttribute('data-image');
+      const popup = document.createElement('div');
+      popup.id = 'story-popup';
+  
+      popup.innerHTML = `
+        <img src="${imageSrc}" alt="Story Image">
+        <button class="close-btn" onclick="closeStory()">Close</button>
+      `;
+  
+      document.body.appendChild(popup);
+      element.classList.add('active');
+  
+      setTimeout(() => {
+        document.getElementById('story-popup').style.display = 'block';
+        element.classList.remove('active');
+      }, 5000);
+    }
+  
+    function closeStory() {
+      const popup = document.getElementById('story-popup');
+      if (popup) {
+        document.body.removeChild(popup);
+      }
+    }
+    function startLoading() {
+      const story = document.querySelector('.story');
+      story.classList.add('loading');
+    }
+  </script>
+</body>
+</html> 

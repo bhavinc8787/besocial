@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Facebook Clone Login</title>
+  <link rel="stylesheet" href="C:\BeSocial\besocial.css">
+  <script>
+   
+    const users = [
+      {
+        "email": "test@example.com",
+        "password": "password123"
+      },
+      {
+        "email": "user@example.com",
+        "password": "mypassword"
+      }
+    ];
+
+    function handleLogin(event) {
+      event.preventDefault();
+
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+    
+      const user = users.find(user => user.email === email && user.password === password);
+
+      if (user) {
+        alert('Login successful');
+        window.location.href = 'feeds.html'; // Redirect to another page on success
+      } else {
+        alert('Invalid email or password'); // Show error message
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>&nbsp;&nbsp;&nbsp;Welcome to &#120069;eSocial &nbsp;&nbsp;&nbsp;</h1>
+    <br>
+    <form class="login-form" onsubmit="handleLogin(event)">
+      <div class="form-group">
+        <input placeholder="Enter Email here..." type="email" id="email" name="email" required>
+      </div>
+      <br>
+      <div class="form-group">
+        <input placeholder="Enter Password here..." type="password" id="password" name="password" required>
+      </div>
+      <br>
+      <div class="form-group">
+        <a href="forpass.html" class="forgot-password">Forgot Password?</a>
+      </div>
+      <button type="submit" class="login-btn">Log In</button>
+    </form>
+    <br>
+    <div class="signup-link">
+      Don't have an account? <a href="signup.html">Sign Up</a>
+    </div>
+  </div>
+</body>
+</html>
