@@ -38,12 +38,12 @@ input[type="password"] {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    transition: border-color 0.3s ease; /* Add transition for smooth highlighting */
+    transition: border-color 0.3s ease; 
 }
 
 input[type="email"]:focus,
 input[type="password"]:focus {
-    border-color: #1877f2; /* Highlight border color on focus */
+    border-color: #1877f2; 
 }
 
 .forgot-password {
@@ -85,7 +85,7 @@ input[type="password"]:focus {
     position: absolute;
     top: 0;
     right: 0;
-    margin: 0; /* Ensure no extra margin is applied */
-    padding: 0; /* Ensure no extra padding is applied */
+    margin: 0; 
+    padding: 0; 
     font-size: 550%;
 }

@@ -14,7 +14,7 @@
       <ul>
         <li><a href="besocial.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <!-- Add more navigation links as needed -->
+        
       </ul>
     </nav>
   </header>
@@ -24,7 +24,7 @@
     
     <div class="sidebar friends">
       <h2> >>></h2>
-      <!-- Friends content goes here -->
+     
       <div class="option-card" onclick="togglePostBox()">
         <img src="img/add.png" alt="Add New Post Icon">
         <p>Add New Post</p>
@@ -58,41 +58,14 @@
     </div>
     <div class="feeds">
       <h2 style="margin-bottom: 5%;">Feeds</h2>
-      <div class="stories">
-        <div class="story" onclick="startLoading()">
-          <img src="https://via.placeholder.com/150" alt="Image">
-        </div>
-        <div class="story" onclick="showStory(this)" data-image="img\3.jpeg">
-          <img src="img\3.jpeg" alt="Story 1">
-        </div>
-        <div class="story" onclick="showStory(this)" data-image="img\3.jpeg">
-          <img src="img\3.jpeg" alt="Story 1">
-        </div>
-        <div class="story" onclick="showStory(this)" data-image="img\3.jpeg">
-          <img src="img\3.jpeg" alt="Story 1">
-        </div>
-        <div class="story" onclick="showStory(this)" data-image="img\3.jpeg">
-          <img src="img\3.jpeg" alt="Story 1">
-        </div>
-        <div class="story" onclick="showStory(this)" data-image="img\3.jpeg">
-          <img src="img\3.jpeg" alt="Story 1">
-        </div>
-        <div class="story" onclick="showStory(this)" data-image="img\3.jpeg">
-          <img src="img\3.jpeg" alt="Story 1">
-        </div>
-        <div class="story" onclick="showStory(this)" data-image="img\3.jpeg">
-          <img src="img\3.jpeg" alt="Story 1">
-        </div>
-        <div class="story" onclick="showStory(this)" data-image="img\3.jpeg">
-          <img src="img\3.jpeg" alt="Story 1">
-        </div>
-      </div>
+      
+        
       <div class="feed-card">
         <div class="post-header">
           <img src="img\3.jpeg" class="profile-pic" alt="Profile Picture">
           <div class="post-info">
             <p class="name">Yash Deokate</p>
-            <p class="description">Bachpan ka Pyar Bhool nhii jana rere.... <br> #love #breakup</p>
+            <p class="description">Bachpan&#128118; ka Pyar Bhool&#128148; nhii jana rere....&#128540; <br> #love #breakup</p>
           </div>
         </div>
         <img src="img\3.jpeg" class="post-image" alt="Post Image">
@@ -111,7 +84,7 @@
           <img src="img\6.jpeg" class="profile-pic" alt="Profile Picture">
           <div class="post-info">
             <p class="name">Shubham Pound</p>
-            <p class="description">Habibiii... Come to dubai</p>
+            <p class="description">Habibiii... Come to dubai&#128332;</p>
           </div>
         </div>
         <img src="img\7.jpeg" class="post-image" alt="Post Image">
@@ -131,7 +104,7 @@
           <img src="img/4.jpeg" class="profile-pic" alt="Profile Picture">
           <div class="post-info">
             <p class="name">Rajat</p>
-            <p class="description">Lungi Dance....</p>
+            <p class="description">Lungi Dance....&#129305;</p>
           </div>
         </div>
         <img src="img/4.jpeg" class="post-image" alt="Post Image">
@@ -151,7 +124,7 @@
           <img src="img\8.jpeg" class="profile-pic" alt="Profile Picture">
           <div class="post-info">
             <p class="name">Soham Bakre</p>
-            <p class="description">This is a description of the post.</p>
+            <p class="description">At Atal Setu..&#128526;</p>
           </div>
         </div>
         <img src="img\8.jpeg" class="post-image" alt="Post Image">
@@ -171,7 +144,7 @@
           <img src="img\5.jpeg" class="profile-pic" alt="Profile Picture">
           <div class="post-info">
             <p class="name">Sahil Pohekar</p>
-            <p class="description">This is a description of the post.</p>
+            <p class="description">&#128526;	</p>
           </div>
         </div>
         <img src="img\5.jpeg" class="post-image" alt="Post Image">
@@ -191,7 +164,7 @@
           <img src="img\6.jpeg" class="profile-pic" alt="Profile Picture">
           <div class="post-info">
             <p class="name">Shubham Pound</p>
-            <p class="description">This is a description of the post.</p>
+            <p class="description">&#128329;</p>
           </div>
         </div>
         <img src="img\6.jpeg" class="post-image" alt="Post Image">
@@ -342,7 +315,7 @@
         return;
       }
 
-      // Create a new feed card with the new post details
+      
       const feedsContainer = document.querySelector('.feeds');
       const newFeedCard = document.createElement('div');
       newFeedCard.classList.add('feed-card');
@@ -374,7 +347,7 @@
 
       reader.readAsDataURL(image);
 
-      // Reset the input fields and hide the post box
+      
       document.getElementById('post-description').value = '';
       document.getElementById('post-image').value = '';
       document.getElementById('new-post-box').style.display = 'none';
@@ -382,35 +355,11 @@
       alert('Post added successfully');
 
     }
-    function showStory(element) {
-      const imageSrc = element.getAttribute('data-image');
-      const popup = document.createElement('div');
-      popup.id = 'story-popup';
+    
   
-      popup.innerHTML = `
-        <img src="${imageSrc}" alt="Story Image">
-        <button class="close-btn" onclick="closeStory()">Close</button>
-      `;
+     
   
-      document.body.appendChild(popup);
-      element.classList.add('active');
-  
-      setTimeout(() => {
-        document.getElementById('story-popup').style.display = 'block';
-        element.classList.remove('active');
-      }, 5000);
-    }
-  
-    function closeStory() {
-      const popup = document.getElementById('story-popup');
-      if (popup) {
-        document.body.removeChild(popup);
-      }
-    }
-    function startLoading() {
-      const story = document.querySelector('.story');
-      story.classList.add('loading');
-    }
+   
   </script>
 </body>
 </html> 
