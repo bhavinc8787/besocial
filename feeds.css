@@ -1,49 +1,55 @@
-/* Reset default margin and padding */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
+}
   
-  body {
+body {
     font-family: Arial, sans-serif;
     background-color: #b8c0cb;
-  }
+}
   
-  /* Header styles */
-  header {
+/* Header styles */
+header {
     background-color: #333;
     color: #fff;
     padding: 10px;
     text-align: center;
-  }
-  
-  header h1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: top 0.3s; /* Smooth transition */
+}
+
+header h1 {
     margin: 0;
-  }
-  
-  header nav ul {
+}
+
+header nav ul {
     list-style-type: none;
-  }
-  
-  header nav ul li {
+}
+
+header nav ul li {
     display: inline;
     margin-right: 20px;
-  }
-  
-  header nav ul li a {
+}
+
+header nav ul li a {
     color: #fff;
     text-decoration: none;
-  }
+}
   
-  
-  .main-content {
+.main-content {
     display: flex;
-    margin: 20px auto;
+    flex-wrap: wrap;
+    margin: 80px auto 20px; /* Adjusted for fixed header */
     max-width: 1200px;
-  }
-  
-  .sidebar {
+    padding: 0 20px;
+}
+
+.sidebar {
     width: 20%;
     padding: 20px;
     background-color: #fff;
@@ -51,9 +57,10 @@
     border-radius: 5px;
     margin-right: 10px;
     box-shadow: 0px 14px 18px rgba(0, 0, 0, 0.1);
-  }
-  
-  .feeds {
+    flex: 1 1 200px; /* Flexbox adjustment */
+}
+
+.feeds {
     width: 60%;
     padding: 20px;
     background-color: #fff;
@@ -62,145 +69,145 @@
     box-shadow: 0px 14px 18px rgba(0, 0, 0, 0.1);
     overflow-y: auto;
     max-height: 150vh;
-  }
-  
-  .sidebar.chat {
+    flex: 2 1 500px; /* Flexbox adjustment */
+}
+
+.sidebar.chat {
     margin-right: 0;
-  }
-  
-  .chat-rows {
+}
+
+.chat-rows {
     display: flex;
     flex-direction: column;
-  }
-  
-  .chat-row {
+}
+
+.chat-row {
     display: flex;
     align-items: center;
     padding: 10px;
     border-bottom: 1px solid #ccc;
-  }
-  
-  .profile-pic {
+}
+
+.profile-pic {
     width: 50px;
     height: 50px;
     background-size: cover;
     background-position: center;
     border-radius: 50%;
     margin-right: 10px;
-  }
-  
-  .chat-info {
+}
+
+.chat-info {
     flex-grow: 1;
-  }
-  
-  .name {
+}
+
+.name {
     font-weight: bold;
     margin-bottom: 5px;
-  }
-  
-  .status {
+}
+
+.status {
     width: 10px;
     height: 10px;
     border-radius: 50%;
     display: inline-block;
     margin-left: 5px;
-  }
-  
-  .status.online {
+}
+
+.status.online {
     background-color: green;
-  }
-  
-  .status.offline {
+}
+
+.status.offline {
     background-color: red;
-  }
-  
-  .chat-input {
+}
+
+.chat-input {
     width: calc(100% - 70px);
     padding: 5px;
     margin-bottom: 5px;
-  }
-  
-  .send-btn {
+}
+
+.send-btn {
     padding: 5px 10px;
     background-color: #007bff;
     color: #fff;
     border: none;
     cursor: pointer;
     border-radius: 5px;
-  }
-  
-  .send-btn:hover {
+}
+
+.send-btn:hover {
     background-color: #0056b3;
-  }
-  
-  /* Feed card styles */
-  .feed-card {
+}
+
+/* Feed card styles */
+.feed-card {
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 20px;
     margin-bottom: 20px;
     box-shadow: 0px 14px 18px rgba(0, 0, 0, 0.1);
-    
-  }
-  
-  .post-header {
+}
+
+.post-header {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
-  }
-  
-  .post-info {
+}
+
+.post-info {
     margin-left: 10px;
-  }
-  
-  .post-image {
+}
+
+.post-image {
     width: 100%;
     height: auto;
     margin: 10px 0;
-  }
-  
-  .post-icons {
+}
+
+.post-icons {
     display: flex;
-    justify-content:space-evenly;
-  }
-  
-  .icon {
-    width: 30px; 
+    justify-content: space-evenly;
+}
+
+.icon {
+    width: 30px;
     cursor: pointer;
-  }
-  
-  .inactive {
+}
+
+.inactive {
     opacity: 0.5;
-  }
-  
-  .comment-section {
+}
+
+.comment-section {
     margin-top: 10px;
-  }
-  
-  .comment-input {
+}
+
+.comment-input {
     width: 80%;
     padding: 10px;
     margin-right: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-  }
-  
-  .comment-btn {
+}
+
+.comment-btn {
     padding: 10px 20px;
     background-color: #007bff;
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-  }
-  
-  .comment-btn:hover {
+}
+
+.comment-btn:hover {
     background-color: #0056b3;
-  }
-  
-  /* Footer styles */
-  footer {
+}
+
+/* Footer styles */
+footer {
     background-color: #333;
     color: #fff;
     padding: 20px;
@@ -208,26 +215,27 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-  
-  .contact-info {
+}
+
+.contact-info {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-  
-  .info-item {
+}
+
+.info-item {
     display: flex;
     align-items: center;
-    margin-bottom: 10px; 
-  }
-  
-  .info-item img {
-    width: 30px; 
-    height: auto; 
-    margin-right: 10px; 
-  }
-  .sidebar .option-card {
+    margin-bottom: 10px;
+}
+
+.info-item img {
+    width: 30px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.sidebar .option-card {
     display: flex;
     align-items: center;
     padding: 10px;
@@ -236,28 +244,29 @@
     border-radius: 5px;
     cursor: pointer;
     background-color: #f9f9f9;
-  }
-  .new-post-box {
+}
+
+.new-post-box {
     margin-top: 10px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #f9f9f9;
-  }
-  
-  .post-input {
+}
+
+.post-input {
     width: calc(100% - 20px);
     padding: 8px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-  }
-  
-  .post-file {
+}
+
+.post-file {
     margin-bottom: 10px;
-  }
-  
-  .post-btn {
+}
+
+.post-btn {
     display: inline-block;
     padding: 10px 20px;
     background-color: #007bff;
@@ -265,19 +274,120 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-  }
-  
-  .post-btn:hover {
+}
+
+.post-btn:hover {
     background-color: #0056b3;
-  }
-  .sidebar .option-card img {
+}
+
+.sidebar .option-card img {
     width: 24px;
     height: 24px;
     margin-right: 10px;
-  }
-  
-  .sidebar .option-card p {
+}
+
+.sidebar .option-card p {
     margin: 0;
     font-size: 14px;
-  }
- 
+}
+
+/* Media Queries */
+
+/* Large screens (desktops, 1200px and above) */
+@media (min-width: 1200px) {
+    .main-content {
+        padding: 0 40px;
+    }
+}
+
+/* Medium screens (tablets, 768px to 1199px) */
+@media (max-width: 1199px) {
+    .sidebar {
+        width: 25%;
+    }
+    .feeds {
+        width: 70%;
+    }
+}
+
+/* Small screens (phones, 767px and below) */
+@media (max-width: 767px) {
+    header nav ul li {
+        display: block;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .main-content {
+        flex-direction: column;
+        padding: 0 10px;
+    }
+    
+    .sidebar, .feeds {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .feeds {
+        margin-bottom: 20px;
+    }
+
+    .chat-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .profile-pic {
+        width: 40px;
+        height: 40px;
+    }
+
+    .post-icons {
+        flex-direction: column;
+    }
+
+    .post-image {
+        height: auto;
+    }
+
+    .comment-input {
+        width: calc(100% - 40px);
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .post-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .post-info {
+        margin-left: 0;
+    }
+
+    .icon {
+        width: 25px;
+    }
+
+    .post-image {
+        margin: 5px 0;
+    }
+
+    .feeds {
+        padding: 10px;
+    }
+
+    .feed-card {
+        padding: 15px;
+    }
+
+    .comment-input {
+        width: calc(100% - 30px);
+    }
+
+    .post-input {
+        width: calc(100% - 16px);
+    }
+}
